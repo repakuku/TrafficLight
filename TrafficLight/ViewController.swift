@@ -2,12 +2,15 @@ import UIKit
 
 final class ViewController: UIViewController {
     
-    private var counter = 0
+    private var currentLight: CurrentLight = .red
     
     @IBOutlet var redLightView: UIView!
     @IBOutlet var yellowLightView: UIView!
     @IBOutlet var greenLightView: UIView!
     @IBOutlet var button: UIButton!
+    
+    private let lightIsOn: CGFloat = 1
+    private let lightIsOff: CGFloat = 0.3
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -28,23 +31,26 @@ final class ViewController: UIViewController {
             button.setTitle("NEXT", for: .normal)
         }
         
-        switch counter % 3 {
-        case 0:
-            redLightView.alpha = 1
-            yellowLightView.alpha = 0.3
-            greenLightView.alpha = 0.3
-        case 1:
-            redLightView.alpha = 0.3
-            yellowLightView.alpha = 1
-            greenLightView.alpha = 0.3
-        case 2:
-            redLightView.alpha = 0.3
-            yellowLightView.alpha = 0.3
-            greenLightView.alpha = 1
-        default:
-            break
+        switch currentLight {
+        case .red:
+            greenLightView.alpha = lightIsOff
+            redLightView.alpha = lightIsOn
+            currentLight = .yellow
+        case .yellow:
+            redLightView.alpha = lightIsOff
+            yellowLightView.alpha = lightIsOn
+            currentLight = .green
+        case .green:
+            yellowLightView.alpha = lightIsOff
+            greenLightView.alpha = lightIsOn
+            currentLight = .red
         }
-        
-        counter += 1
+    }
+}
+
+// MARK: - CurrentLight
+extension ViewController {
+    private enum CurrentLight {
+        case red, yellow, green
     }
 }
