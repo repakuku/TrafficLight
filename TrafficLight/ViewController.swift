@@ -9,18 +9,24 @@ final class ViewController: UIViewController {
     @IBOutlet var greenLightView: UIView!
     @IBOutlet var button: UIButton!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         
         redLightView.layer.cornerRadius = redLightView.frame.width / 2
         yellowLightView.layer.cornerRadius = yellowLightView.frame.width / 2
         greenLightView.layer.cornerRadius = greenLightView.frame.width / 2
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         button.layer.cornerRadius = 10
     }
     
     @IBAction func buttonPressed() {
-        button.setTitle("NEXT", for: .normal)
+        if button.currentTitle == "START" {
+            button.setTitle("NEXT", for: .normal)
+        }
         
         switch counter % 3 {
         case 0:
@@ -42,4 +48,3 @@ final class ViewController: UIViewController {
         counter += 1
     }
 }
-

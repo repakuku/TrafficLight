@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="VDR-u6-p83">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="VDR-u6-p83">
                                 <rect key="frame" x="140" y="79" width="150" height="550"/>
                                 <subviews>
                                     <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yNW-D8-KK7">
@@ -24,22 +24,15 @@
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="yNW-D8-KK7" secondAttribute="height" multiplier="1:1" id="8IK-tD-m19"/>
-                                            <constraint firstAttribute="width" constant="150" id="mOx-7x-Xdg"/>
                                         </constraints>
                                     </view>
                                     <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="169-vk-y8g">
                                         <rect key="frame" x="0.0" y="200" width="150" height="150"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="169-vk-y8g" secondAttribute="height" multiplier="1:1" id="P4D-tf-HLV"/>
-                                        </constraints>
                                     </view>
                                     <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="INE-yW-mhe">
                                         <rect key="frame" x="0.0" y="400" width="150" height="150"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="INE-yW-mhe" secondAttribute="height" multiplier="1:1" id="LXy-CR-iTI"/>
-                                        </constraints>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -58,6 +51,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="VDR-u6-p83" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.590129" id="4BT-uU-6v5"/>
                             <constraint firstItem="VDR-u6-p83" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GkE-SU-zIV"/>
                             <constraint firstItem="0mo-EZ-Mwt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nbm-qx-mHB"/>
                             <constraint firstItem="yNW-D8-KK7" firstAttribute="width" secondItem="0mo-EZ-Mwt" secondAttribute="width" id="O63-aH-jR5"/>
